@@ -51,7 +51,7 @@ Il programma python (list.py) in questa cartella fa la lista dei file e delle ca
 
 ### Creare immagine
 
-~$ docker build -t imamgine-lista .
+~$ docker build -t immagine-lista .
 
 NOTA: il punto alla fine della riga fa parte del comando!
 
