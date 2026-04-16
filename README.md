@@ -66,7 +66,18 @@ Al termine, l’immagine è salvata localmente.
 Verificare la presenza dell’immagine con il comando:
 
 ~$ docker images
-#################################################################################
+
+(
+nel caso servisse cancellare immagine:
+
+~$ docker rmi nome-immagine
+
+)
+
+Con il comando seguente si possno vedere le caratteristiche dell'immagine:
+
+~$ docker inspect nome-immagine
+
 ### Avvio del container
 
 ~$ docker run -it stampa-lista
@@ -74,8 +85,7 @@ Verificare la presenza dell’immagine con il comando:
 #### SPIEGAZIONE
 docker run: crea e avvia un container
 
--i: 
-mantiene aperto lo standard input
+-i: mantiene aperto lo standard input
 
 -t: alloca un terminale (TTY)
 
@@ -85,9 +95,86 @@ Il container viene eseguito in primo piano
 
 Per uscire dal container: exit
 
+### Terminare il container
+
+Per terminare il container:
+
+~$ docker stop <container_id>
+
 Al termine, verificare la lista dei container in esecuzione con il comando:
 
 ~$ docker ps  
 oppure  
 ~$ docker ps -a   
 per vedere i container sia in esecuzione che terminati.
+
+
+## Esercizio 3
+
+~$ cd container-lab/API
+
+Il programma python (list.py) in questa cartella crea un web server (basato su UVICORN) che espone 3 Application Programming Interface sul localhost:
+/ - indica che il server e' pronto ed in ascolto
+/add/<nome> - inserisce <nome> in un database SQL creato all'interno del container
+/lista - mostra i nomi inseriti nel database
+
+A differenza di esercizio 2, il container in esercizio 3 resta in esecuzione finche' non venga terminato.
+
+### Creare immagine
+
+~$ docker build -t imamgine-api .
+
+NOTA: il punto alla fine della riga fa parte del comando!
+
+### Avvio del container
+
+~$ docker run -d -p 8000:8000 immagine-api
+
+#### SPIEGAZIONE
+-d: lancia il container in background permettendo di usare ancora la command line interface
+
+-p: esponde la porta 8000 interna al container sulla porta 8000 esternamente al container su host (mappa la porta interna al container 8000 sulla porta 8000 dell'host)
+
+### Osservare il container
+
+~$ docker inspect nome-container
+
+oppure:
+
+~$ docker stats nome-container
+
+### Gestire le risorse del container in fase di avvio
+
+~$ docker run -m 512m nome-immagine  
+limita la RAM del container a 512MB
+
+~$ docker run --cpus=1 nome-immagine  
+assegna al container 1 CPU
+
+~$ docker run --cpu-period=100000 --cpu-quota=50000 nome-immagine
+assegna al container 1 una quota di 50ms in un periodo di tempo 100ms (equivale ad usare 0.5 CPU)
+
+~$ docker run --pids-limit 50 nome-immagine
+limita il numero dei processi in un container a 50
+
+### Terminare il container
+
+Per terminare il container:
+
+~$ docker stop <container_id>  
+
+
+# Author  
+
+Paolo Belloni  
+
+📧 paolo.belloni@uniupo.it
+
+🎓 Course Information  
+Institution: Universita del Piemonte Orientale  
+Course: sistemi Operativi 2  
+Language: Labs in Italian  
+📄 License  
+Educational materials for UniUPO.  
+
+Last Updated: April 2026  
