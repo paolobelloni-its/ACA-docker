@@ -87,7 +87,7 @@ Per uscire dal container: exit
 
 Al termine, verificare la lista dei container in esecuzione con il comando:
 
-~$ docker ps
-oppure
-~$ docker ps -a 
+~$ docker ps  
+oppure  
+~$ docker ps -a   
 per vedere i container sia in esecuzione che terminati.
