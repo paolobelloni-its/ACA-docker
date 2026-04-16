@@ -80,7 +80,7 @@ Con il comando seguente si possno vedere le caratteristiche dell'immagine:
 
 ### Avvio del container
 
-~$ docker run -it stampa-lista
+~$ docker run -it immagine-lista
 
 #### SPIEGAZIONE
 docker run: crea e avvia un container
@@ -89,7 +89,7 @@ docker run: crea e avvia un container
 
 -t: alloca un terminale (TTY)
 
-stampa-lista: nome dell’immagine da usare
+immagine-lista: nome dell’immagine da usare
 
 Il container viene eseguito in primo piano
 
@@ -128,12 +128,14 @@ NOTA: il punto alla fine della riga fa parte del comando!
 
 ### Avvio del container
 
-~$ docker run -d -p 8000:8000 immagine-api
+~$ docker run -d -p 8000:8000 --name nome-container immagine-api
 
 #### SPIEGAZIONE
 -d: lancia il container in background permettendo di usare ancora la command line interface
 
 -p: esponde la porta 8000 interna al container sulla porta 8000 esternamente al container su host (mappa la porta interna al container 8000 sulla porta 8000 dell'host)
+
+--name: assegna un nome al container, di default il nome e' casuale
 
 ### Osservare il container
 
@@ -163,6 +165,17 @@ Per terminare il container:
 
 ~$ docker stop <container_id>  
 
+## Esercizio 4
+
+Voglio utilizzare un programma non installato sulla mia macchina; posso creare un container con un sistema operativo adatto ed installarlo al suo interno.  
+Esempio: SQL  
+
+~$ docker run -it --name ubuntu-sql ubuntu bash
+~$~ apt update  
+~$~ apt install -y sqlite3  
+~$~ sqlite3 test.db  
+.exit  
+exit  
 
 # Author  
 
