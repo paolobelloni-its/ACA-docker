@@ -122,7 +122,7 @@ A differenza di esercizio 2, il container in esercizio 3 resta in esecuzione fin
 
 ### Creare immagine
 
-~$ docker build -t imamgine-api .
+~$ docker build -t immagine-api .
 
 NOTA: il punto alla fine della riga fa parte del comando!
 
