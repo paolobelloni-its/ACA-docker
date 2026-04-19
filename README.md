@@ -24,7 +24,7 @@ Verifiche iniziali:
 
 Clonare il repository GitHub corrente su Cloud shell. Attraverso questa operazione saranno scaricate 2 cartelle contenenti i file degli Esercizi 1 e 2.
 
-~$ git clone https://github.com/paolobelloni-upo/container-lab.git
+~$ git clone https://github.com/paolobelloni-its/ACA-docker.git
 
 ## Esercizio 2
 
@@ -164,13 +164,13 @@ exit
 
 Paolo Belloni  
 
-📧 paolo.belloni@uniupo.it
+📧 paolo.belloni@its-ictpiemonte.it
 
 🎓 Course Information  
-Institution: Universita del Piemonte Orientale  
-Course: sistemi Operativi 2  
+Institution: ITS Academy ICt Piemonte 
+Course: OS e Sistemi di Virtualizzazione  
 Language: Labs in Italian  
 📄 License  
-Educational materials for UniUPO.  
+Educational materials for ITS Academy.  
 
 Last Updated: April 2026  
