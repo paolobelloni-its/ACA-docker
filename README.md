@@ -1,27 +1,10 @@
 # container-lab
 
-Questo laboratorio sara' svolto esclusivamente su Google Cloud Shell.
-Non è necessario installare nulla sul PC!
-
 Strumenti utilizzati:
 - git
 - Docker
  
 ## Accesso all’ambiente di laboratorio
-
-### 1. Google Cloud Shell
-Accedere da browser a:
-https://shell.cloud.google.com
-
-Dopo il login con account Google, si apre automaticamente:
-- una shell Linux
-- con git e docker già installati
-
-Non è necessario installare nulla sul proprio PC.
-
-### 2. Entrare nell’ambiente Docker
-
-Docker è già disponibile nella shell.
 
 Verifiche iniziali:
 
