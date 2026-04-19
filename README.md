@@ -9,7 +9,13 @@ Strumenti utilizzati:
 Verifiche iniziali:
 
 ~$ docker --version  
-~$ git --version
+~$ git --version  
+
+Per installare git, da Powershell:  
+~$ winget install --id Git.Git -e  
+
+Per installare Docker, da browser:  
+https://www.docker.com/products/docker-desktop/  
 
 ## Obiettivi
 - Capire i comandi base di Docker
